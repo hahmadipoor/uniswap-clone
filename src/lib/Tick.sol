@@ -4,6 +4,7 @@ pragma solidity 0.8.19;
 import "./TickMath.sol";
 
 library Tick {
+    
     function tickSpacingToMaxLiquidityPerTick(int24 tickSpacing) internal pure returns (uint128){
 
         int24 minTick = (TickMath.MIN_TICK / tickSpacing) * tickSpacing; 
