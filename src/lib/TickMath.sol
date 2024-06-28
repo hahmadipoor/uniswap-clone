@@ -71,8 +71,9 @@ library TickMath {
         if (absTick & 0x80000 != 0) {
             ratio = (ratio * 0x48a170391f7dc42444e8fa2) >> 128;
         }
-
-        if (tick > 0) ratio = type(uint256).max / ratio;
+        if (tick > 0){
+            ratio = type(uint256).max / ratio;
+        } 
         sqrtPriceX96 = uint160((ratio >> 32) + (ratio % (1 << 32) == 0 ? 0 : 1));
     }
 
